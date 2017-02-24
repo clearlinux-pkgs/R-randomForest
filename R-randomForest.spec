@@ -4,10 +4,10 @@
 #
 Name     : R-randomForest
 Version  : 4.6
-Release  : 26
-URL      : http://cran.r-project.org/src/contrib/randomForest_4.6-10.tar.gz
-Source0  : http://cran.r-project.org/src/contrib/randomForest_4.6-10.tar.gz
-Summary  : Breiman and Cutler's random forests for classification and
+Release  : 27
+URL      : http://cran.r-project.org/src/contrib/randomForest_4.6-12.tar.gz
+Source0  : http://cran.r-project.org/src/contrib/randomForest_4.6-12.tar.gz
+Summary  : Breiman and Cutler's Random Forests for Classification and
 Group    : Development/Tools
 License  : GPL-2.0 GPL-2.0+
 Requires: R-randomForest-lib
@@ -29,11 +29,11 @@ lib components for the R-randomForest package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1487859035
+export SOURCE_DATE_EPOCH=1487948342
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1487859035
+export SOURCE_DATE_EPOCH=1487948342
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
