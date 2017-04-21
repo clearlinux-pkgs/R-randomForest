@@ -4,7 +4,7 @@
 #
 Name     : R-randomForest
 Version  : 4.6.12
-Release  : 31
+Release  : 32
 URL      : http://cran.r-project.org/src/contrib/randomForest_4.6-12.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/randomForest_4.6-12.tar.gz
 Summary  : Breiman and Cutler's Random Forests for Classification and
@@ -28,12 +28,15 @@ lib components for the R-randomForest package.
 %setup -q -c -n randomForest
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1489129563
+export SOURCE_DATE_EPOCH=1492802146
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1489129563
+export SOURCE_DATE_EPOCH=1492802146
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -49,7 +52,7 @@ R CMD INSTALL --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} --build  -l
 export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library randomForest
 
@@ -61,6 +64,7 @@ R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/lib
 /usr/lib64/R/library/randomForest/INDEX
 /usr/lib64/R/library/randomForest/Meta/Rd.rds
 /usr/lib64/R/library/randomForest/Meta/data.rds
+/usr/lib64/R/library/randomForest/Meta/features.rds
 /usr/lib64/R/library/randomForest/Meta/hsearch.rds
 /usr/lib64/R/library/randomForest/Meta/links.rds
 /usr/lib64/R/library/randomForest/Meta/nsInfo.rds
