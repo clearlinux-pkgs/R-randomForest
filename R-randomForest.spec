@@ -4,7 +4,7 @@
 #
 Name     : R-randomForest
 Version  : 4.6.12
-Release  : 40
+Release  : 41
 URL      : http://cran.r-project.org/src/contrib/randomForest_4.6-12.tar.gz
 Source0  : http://cran.r-project.org/src/contrib/randomForest_4.6-12.tar.gz
 Summary  : Breiman and Cutler's Random Forests for Classification and
