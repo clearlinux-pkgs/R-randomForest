@@ -4,14 +4,14 @@
 #
 Name     : R-randomForest
 Version  : 4.6.14
-Release  : 56
+Release  : 57
 URL      : https://cran.r-project.org/src/contrib/randomForest_4.6-14.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/randomForest_4.6-14.tar.gz
 Summary  : Breiman and Cutler's Random Forests for Classification and
 Group    : Development/Tools
 License  : GPL-2.0 GPL-2.0+
-Requires: R-randomForest-lib
-BuildRequires : clr-R-helpers
+Requires: R-randomForest-lib = %{version}-%{release}
+BuildRequires : buildreq-R
 
 %description
 No detailed description available
@@ -32,11 +32,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1522162522
+export SOURCE_DATE_EPOCH=1552783645
 
 %install
+export SOURCE_DATE_EPOCH=1552783645
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1522162522
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -71,8 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library randomForest|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  randomForest || :
 
 
 %files
@@ -100,7 +99,6 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/randomForest/help/randomForest.rdx
 /usr/lib64/R/library/randomForest/html/00Index.html
 /usr/lib64/R/library/randomForest/html/R.css
-/usr/lib64/R/library/randomForest/libs/symbols.rds
 
 %files lib
 %defattr(-,root,root,-)
