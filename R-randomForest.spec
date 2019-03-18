@@ -4,7 +4,7 @@
 #
 Name     : R-randomForest
 Version  : 4.6.14
-Release  : 58
+Release  : 59
 URL      : https://cran.r-project.org/src/contrib/randomForest_4.6-14.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/randomForest_4.6-14.tar.gz
 Summary  : Breiman and Cutler's Random Forests for Classification and
@@ -32,10 +32,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552783645
+export SOURCE_DATE_EPOCH=1552937050
 
 %install
-export SOURCE_DATE_EPOCH=1552783645
+export SOURCE_DATE_EPOCH=1552937050
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
