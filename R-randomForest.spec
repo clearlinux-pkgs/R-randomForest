@@ -4,7 +4,7 @@
 #
 Name     : R-randomForest
 Version  : 4.6.14
-Release  : 67
+Release  : 68
 URL      : https://cran.r-project.org/src/contrib/randomForest_4.6-14.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/randomForest_4.6-14.tar.gz
 Summary  : Breiman and Cutler's Random Forests for Classification and
@@ -12,7 +12,6 @@ Group    : Development/Tools
 License  : GPL-2.0 GPL-2.0+
 Requires: R-randomForest-lib = %{version}-%{release}
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 No detailed description available
@@ -27,21 +26,22 @@ lib components for the R-randomForest package.
 
 %prep
 %setup -q -c -n randomForest
+cd %{_builddir}/randomForest
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571882437
+export SOURCE_DATE_EPOCH=1589527212
 
 %install
-export SOURCE_DATE_EPOCH=1571882437
+export SOURCE_DATE_EPOCH=1589527212
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
