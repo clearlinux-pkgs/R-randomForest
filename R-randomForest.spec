@@ -7,7 +7,7 @@
 #
 Name     : R-randomForest
 Version  : 4.7.1.2
-Release  : 94
+Release  : 95
 URL      : https://cran.r-project.org/src/contrib/randomForest_4.7-1.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/randomForest_4.7-1.2.tar.gz
 Summary  : Breiman and Cutlers Random Forests for Classification and
